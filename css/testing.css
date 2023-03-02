@@ -1,0 +1,15 @@
+div{
+    width: 40%;
+    margin: 20px 30%;
+    padding: 20px;
+    border: 0;
+    border-radius:20px;
+    box-shadow: 5px 5px 5px var(--shadow-color);
+    transition: 1s;
+}
+div > form{
+    display: grid;
+}
+div:hover{
+    box-shadow: -5px -5px 5px var(--shadow-color);
+}

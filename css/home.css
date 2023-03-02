@@ -1,0 +1,49 @@
+section > div:first-of-type{
+    float: left;
+}
+section > div:first-of-type > img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
+
+section:last-of-type img {
+    width: 50%;
+    height: 100%;
+}
+section:first-of-type{
+    direction: rtl;
+    padding: 0;
+}
+section:last-of-type{
+    display: flex;
+    padding: 0;
+}
+section:last-of-type > h1 {
+    color: var(--main-color);
+    font-size: 100px;
+    display: inline-block;
+    vertical-align: middle;
+}
+section > div {
+    float: right;
+}
+section > div >  button{
+    border: none;
+    background-color: var(--main-color);
+    padding: 10px;
+    font-size:large ;
+    border-radius: var(--raduis-size);
+    transition: 1s;
+    color: var(--white-color);
+}
+section >div > button > a {
+    text-decoration: none;
+    color: inherit;
+    transition: 1s;
+}
+section >div > button:hover {
+    color: var(--main-color);
+    background-color: var(--white-color);
+
+}

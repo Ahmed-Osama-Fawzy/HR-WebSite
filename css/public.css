@@ -1,0 +1,57 @@
+:root{
+    --main-color : rgb(0, 79, 124) ;
+    --white-color : azure ;
+    --shadow-color : rgb(197, 197, 197) ;
+    --raduis-size : 20px;
+
+}
+body{
+    width: 70%;
+    margin: 2% 15%;
+    padding: 5% auto;
+    font-weight: 600;
+    box-sizing: border-box;
+    font-family: 'Courier New', Courier, monospace;
+}
+.header{
+    width: 100%;
+    padding: 13px 10px;
+    box-shadow:none;
+    border-radius: none;
+}
+section{
+    padding: 20px;
+    box-shadow: 5px 5px 10px var(--shadow-color);
+    border-radius: var(--raduis-size);
+    text-align: center;
+}
+label{
+    font-size: larger;
+    color: var(--main-color);
+}
+input:not([type="submit"]){
+    border: none;
+    border-radius: var(--raduis-size);
+    box-shadow: 5px 5px 5px var(--shadow-color);
+    transition: 1s;
+    font-size: large;
+}
+input:hover:not([type="submit"]){
+    box-shadow: -5px -5px 5px var(--shadow-color);
+}
+
+.send{
+    border: none;
+    background-color: var(--main-color);
+    padding: 10px;
+    font-size:large ;
+    border-radius: var(--raduis-size);
+    transition: 1s;
+    color: var(--white-color);
+}
+
+.send:hover{
+    color: var(--main-color);
+    background-color: var(--white-color);
+
+}

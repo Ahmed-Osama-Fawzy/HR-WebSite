@@ -1,0 +1,19 @@
+section{
+    width: fit-content;
+    margin: auto;
+    text-align: center;
+    padding: 5%;
+}
+section div form {
+    display: grid;
+}
+section div label , input , h2 , span {
+    padding: 5px;
+    margin: 10px;
+    border: none;
+}
+section div span img{
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
