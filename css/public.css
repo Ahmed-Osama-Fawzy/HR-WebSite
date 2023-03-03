@@ -2,41 +2,46 @@
 	--main-color: rgb(0, 128, 255);
 	--white-color: azure;
 	--shadow-color: rgba(185, 167, 167, 0.134);
-	--raduis-size: 12.5px;
+	--raduis-size: 20px;
 }
-body {
-	width: 70%;
+
+.container {
 	margin: 2% 15%;
 	padding: 5% auto;
 	font-weight: 600;
 	box-sizing: border-box;
 	font-family: cursive;
 }
+
 .header {
 	width: 100%;
 	padding: 13px 10px;
 	box-shadow: none;
 	border-radius: none;
 }
+
 section {
 	padding: 20px;
 	box-shadow: 3px 3px 3px var(--shadow-color);
 	border-radius: var(--raduis-size);
 	text-align: center;
 }
+
 label {
 	font-size: larger;
 	font-family: sans-serif;
 	color: var(--main-color);
 }
+
 input:not([type="submit"]) {
 	border: 1.7px solid rgb(232, 229, 229);
-	border-radius: var(--raduis-size);
+	border-radius: 12.5px;
 	box-shadow: 2px 2px 2px var(--shadow-color);
 	transition: 1s;
 	font-size: 16px;
 	outline: none;
 }
+
 input:hover:not([type="submit"]) {
 	box-shadow: -1.5px -2px 2px 0px var(--shadow-color);
 }
@@ -44,6 +49,7 @@ input:hover:not([type="submit"]) {
 input:focus:not([type="sumbit"]) {
 	border: 2.19px solid rgb(177, 174, 174);
 }
+
 .send {
 	border: none;
 	background-color: var(--main-color);
@@ -51,6 +57,7 @@ input:focus:not([type="sumbit"]) {
 	font-size: large;
 	border-radius: var(--raduis-size);
 	transition: 0.56s;
+	font-family: cursive;
 	color: var(--white-color);
 }
 
