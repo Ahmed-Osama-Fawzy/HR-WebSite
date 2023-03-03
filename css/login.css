@@ -1,19 +1,37 @@
-section{
-    width: fit-content;
-    margin: auto;
-    text-align: center;
-    padding: 5%;
+section {
+	width: fit-content;
+	margin: auto;
+	text-align: center;
+	padding: 5%;
+	background-color: rgb(252, 253, 253);
+	border: 1.47px solid rgba(232, 229, 229, 0.602);
 }
 section div form {
-    display: grid;
+	display: grid;
 }
-section div label , input , h2 , span {
-    padding: 5px;
-    margin: 10px;
-    border: none;
+section div label,
+input,
+h2,
+span {
+	padding: 10px;
+	margin: 0px;
+	border: none;
 }
-section div span img{
-    width: 60px;
-    height: 60px;
-    border-radius: 100%;
+section div span img {
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+}
+
+section div form input {
+	margin: 5px 5px 15px 0px;
+}
+
+section div a {
+	text-decoration: none;
+	color: var(--main-color);
+}
+
+section div a:hover {
+	color: #2836cf;
 }
