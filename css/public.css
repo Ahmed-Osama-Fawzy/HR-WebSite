@@ -13,13 +13,6 @@
 	font-family: cursive;
 }
 
-.header {
-	width: 100%;
-	padding: 13px 10px;
-	box-shadow: none;
-	border-radius: none;
-}
-
 section {
 	padding: 20px;
 	box-shadow: 3px 3px 3px var(--shadow-color);
@@ -28,12 +21,14 @@ section {
 }
 
 label {
+	font-weight: bold;
 	font-size: larger;
 	font-family: sans-serif;
 	color: var(--main-color);
 }
 
 input:not([type="submit"]) {
+	padding: 10px;
 	border: 1.7px solid rgb(232, 229, 229);
 	border-radius: 12.5px;
 	box-shadow: 2px 2px 2px var(--shadow-color);
@@ -42,16 +37,15 @@ input:not([type="submit"]) {
 	outline: none;
 }
 
-input:hover:not([type="submit"]) {
+input:not([type="submit"]):hover {
 	box-shadow: -1.5px -2px 2px 0px var(--shadow-color);
 }
 
-input:focus:not([type="sumbit"]) {
+input:not([type="submit"]):focus {
 	border: 2.19px solid rgb(177, 174, 174);
 }
 
 .send {
-	border: none;
 	background-color: var(--main-color);
 	padding: 10px;
 	font-size: large;
@@ -59,6 +53,8 @@ input:focus:not([type="sumbit"]) {
 	transition: 0.56s;
 	font-family: cursive;
 	color: var(--white-color);
+	cursor: pointer;
+	border: none;
 }
 
 .send:hover {

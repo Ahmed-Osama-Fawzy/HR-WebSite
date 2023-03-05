@@ -1,3 +1,6 @@
+* {
+	caret-color: rgba(0, 128, 255, 0.851);
+}
 section {
 	width: fit-content;
 	margin: auto;
