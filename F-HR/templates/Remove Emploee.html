@@ -1,0 +1,14 @@
+{% extends 'Header.html' %}
+{% block CssFiles %}
+<link rel="stylesheet" href="{{ url_for('static' , filename='') }}">
+{% endblock %}
+{% block Body%}
+<form method="POST">
+    <div>
+        <label for="Id"> Enter The Id </label>
+        <input type="number" required name="Id" id="Id" placeholder="Write The Id">
+    </div>
+    <hr>
+    <input type="submit" value="Remove">
+</form>
+{% endblock %}

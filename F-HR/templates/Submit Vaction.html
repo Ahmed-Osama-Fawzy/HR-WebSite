@@ -1,0 +1,31 @@
+{% extends 'Header.html' %}
+{% block CssFiles %}
+<link rel="stylesheet" href="{{ url_for('static' , filename='') }}">
+{% endblock %}
+{% block Body%}
+<section class="Container">
+    <div class="Father">
+        <form method="POST">
+            <div>
+                <label for="Id"> Id </label>
+                <input type="number" id="Id" name="Id" placeholder="Write Id" required>
+            </div>
+            <div>
+                <label for="Start_Date"> Start Date </label>
+                <input type="date" id="Start_Date" name="Start_Date" required>
+            </div>
+            <div>
+                <label for="End_Date"> End Date </label>
+                <input type="date" id="End_DateEnd_Date" name="Id" required>
+            </div>
+            <div>
+                <label for="Reason"> End Date </label>
+                <textarea name="Reason" id="Reason" placeholder="Write Your Reason">  </textarea>
+            </div>
+            <div>
+                <input type="submit" value="Send">
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}

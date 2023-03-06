@@ -1,0 +1,29 @@
+section div form {
+	display: grid;
+}
+section div label,
+input,
+h2,
+span {
+	padding: 10px;
+	margin: 0px;
+	border: none;
+}
+section div span img {
+	width: 60px;
+	height: 60px;
+	border-radius: 100%;
+}
+
+section div form input {
+	margin: 5px 5px 15px 0px;
+}
+
+section div a {
+	text-decoration: none;
+	color: var(--main-color);
+}
+
+section div a:hover {
+	color: #2836cf;
+}

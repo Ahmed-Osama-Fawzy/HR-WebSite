@@ -1,0 +1,24 @@
+{% extends 'Header.html' %}
+{% block CssFiles %}
+<link rel="stylesheet" href="{{ urlfor('static' , filename='') }}">
+{% endblock %}
+{% block Body%}
+<section class="Conatiner">
+    <div class="Father">
+        <table>
+            <thead>
+                <tr>
+                    <th> Id </th>
+                    <th> Name </th>
+                    <th> Start Date  </th>
+                    <th> End Date </th>
+                    <th> Reason </th>
+                    <th> Satuts </th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+            <tfoot></tfoot>
+        </table>
+    </div>
+</section>
+{% endblock %}

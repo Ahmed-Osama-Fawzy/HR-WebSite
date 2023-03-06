@@ -1,0 +1,43 @@
+{% extends 'Header.html' %} 
+{% block CssFiles %}
+<link rel="stylesheet" href="{{ urlfor('static' , filename='') }}"> 
+{% endblock %} 
+{% block Body%}
+<nav>
+    <div class="navbar">
+            <li>
+                <div class="logo">
+                    <img src="{{ url_for('static' , filename='images/hr-logo-zip-file (1)/png/logo-no-background.png') }}">
+                </div>
+            </li>
+            <li>
+                <a href="Home.html">Home</a>
+            </li>
+            <li>
+                <a href="Add Employee.html">Add Employee</a>
+            </li>
+            <li>
+                <a href="Show Employees.html">List/Search Employee</a>
+            </li>
+            <li>
+                <a href="Modify Employee.html">Modify Employee</a>
+            </li>
+            <li>
+                <a href="Remove Emploee.html">Delete Employee</a>
+            </li>
+            <li>
+                <a href="H Show Vactions.html">Show Vacations</a>
+            </li>
+            <li>
+                <a href="Submit Vaction.html">Submit Vacations</a>
+            </li>
+            <li>
+                <a href="#">Sign Out</a>
+            </li>
+        </ul>
+        </ul>
+    </div>
+</nav>
+{% block Main %}
+{% endblock %}
+{% endblock %}

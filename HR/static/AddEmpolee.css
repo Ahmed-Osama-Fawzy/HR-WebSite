@@ -1,0 +1,8 @@
+section form div{
+    margin: 20px ;
+}
+section div img {
+    width: 60px;
+    height: 60px;
+    border-radius: 100%;
+}
