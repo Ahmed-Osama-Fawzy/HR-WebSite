@@ -1,0 +1,18 @@
+{% extends 'H Navbar.html' %}
+{% block CssFiles %}
+<link rel="stylesheet" href="{{ url_for('static' , filename='') }}">
+{% endblock %}
+{% block Main%}
+<section class="Conatiner">
+    <div class="Father">
+        <ul>
+            <li> <a href="{{ url_for('InsertEmployee') }}"> Add Emploee </a> </li>
+            <li> <a href="{{ url_for('ModifyEmployee') }}"> Modify Emploee </a> </li>
+            <li> <a href="{{ url_for('RemoveEmployee') }}"> Remove Emploee </a>  </li>
+            <li> <a href="{{ url_for('SubmitVaction') }}"> Order Vaction  </a>  </li>
+            <li> <a href="{{ url_for('ShowVactions') }}"> Show Vactions  </a>  </li>
+            <li> Profile </li>
+        </ul>
+    </div>
+</section>
+{% endblock %}

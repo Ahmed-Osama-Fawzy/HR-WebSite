@@ -1,6 +1,6 @@
 {% extends 'Header.html' %}
 {% block CssFiles %}
-<link rel="stylesheet" href="{{ urlfor('static' , filename='') }}">
+<link rel="stylesheet" href="{{ url_for('static' , filename='') }}">
 {% endblock %}
 {% block Body%}
 <section class="Conatiner">
@@ -16,7 +16,15 @@
                     <th> Satuts </th>
                 </tr>
             </thead>
-            <tbody></tbody>
+            <tbody>
+                {% for Row in Data%}
+                    <td>
+                        {% for Value in Row %}
+                            <th> {{ Value }} </th>
+                        {% endfor %}
+                    </td>   
+                {% endfor %}
+            </tbody>
             <tfoot></tfoot>
         </table>
     </div>
