@@ -5,6 +5,10 @@
 	--raduis-size: 20px;
 }
 
+img{
+	width: 100px;
+	height: 100px;
+}
 .container {
 	margin: 2% 15%;
 	padding: 5% auto;
