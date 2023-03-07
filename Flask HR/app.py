@@ -32,11 +32,11 @@ def Home():
 
 @app.route('/HRHome') 
 def HRHome():
-    return render_template('H Home.html', title = "HR Home Page")
+    return render_template('HHome.html', title = "HR Home Page")
 
 @app.route('/MHome') 
 def MHome():
-    return render_template('M Home.html', title = "M Home Page")
+    return render_template('MHome.html', title = "M Home Page")
 
 @app.route('/ShowHRS') 
 def ShowHRS():
@@ -176,10 +176,6 @@ def HShowVactions():
     Data = [list(tup) for tup in cur.fetchall()]
     con.close()
     return render_template('H Show Vactions.html', Data = Data , title = "H Show Vactions")
-
-@app.route('/HRProfile') 
-def HRProfile():
-    return render_template('HR Profile.html', title = "HR Profile Page")
 
 @app.route('/ForgetPassword') 
 def ForgetPassword():

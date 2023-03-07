@@ -1,4 +1,4 @@
-{% extends 'H Navbar.html' %}
+{% extends 'Header.html' %}
 {% block CssFiles %}
 <link rel="stylesheet" href="{{ url_for('static' , filename='') }}">
 {% endblock %}
@@ -17,7 +17,6 @@
             <li> <a href="{{ url_for('RemoveEmployee') }}"> Remove Emploee </a>  </li>
             <li> <a href="{{ url_for('SubmitVaction') }}"> Order Vaction  </a>  </li>
             <li> <a href="{{ url_for('HShowVactions') }}"> Show Vactions  </a>  </li>
-            <li> <a href="{{ url_for('HRProfile') }}"> Profile  </a> </li>
         </ul>
     </div>
 </section>
