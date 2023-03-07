@@ -23,7 +23,13 @@
                 </tr>
             </thead>
             <tbody>
-                
+                {% for Row in Data %}
+                    <tr>
+                        {% for Item in Row %}
+                            <td> {{ Item }} </td>
+                        {% endfor %}
+                    </tr>
+                {% endfor %}
             </tbody>
             <tfoot></tfoot>
         </table>

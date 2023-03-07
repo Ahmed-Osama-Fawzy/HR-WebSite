@@ -3,12 +3,16 @@
 <link rel="stylesheet" href="{{ url_for('static' , filename='') }}">
 {% endblock %}
 {% block Body%}
-<form method="POST" action="{{ url_for('RemoveHR') }}">
-    <div>
-        <label for="Id"> Enter The Id </label>
-        <input type="number" required name="Id" id="Id" placeholder="Write The Id">
+<section class="Container">
+    <div class="Father">
+        <form method="POST" action="{{ url_for('RemoveHR') }}">
+            <div>
+                <label for="Id"> Enter The Id </label>
+                <input type="number" required name="Id" id="Id" placeholder="Write The Id">
+            </div>
+            <hr>
+            <input type="submit" value="Remove">
+        </form>
     </div>
-    <hr>
-    <input type="submit" value="Remove">
-</form>
+</section>
 {% endblock %}

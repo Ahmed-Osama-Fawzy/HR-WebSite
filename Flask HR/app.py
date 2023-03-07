@@ -40,12 +40,21 @@ def MHome():
 
 @app.route('/ShowHRS') 
 def ShowHRS():
-    return render_template('Show HRS.html', title = "Show HRS Page")
+    con = sqlite3.connect(f"{os.path.dirname(os.path.abspath(__file__))}\System.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM HRs")
+    Data = [list(tup) for tup in cur.fetchall()]
+    con.close()
+    return render_template('Show HRS.html' , Data = Data, title = "Show HRS Page")
 
 @app.route('/ShowEmplyooes') 
 def ShowEmplyooes():
-    return render_template('Show Employees.html', title = "Show Employees Page")
-
+    con = sqlite3.connect(f"{os.path.dirname(os.path.abspath(__file__))}\System.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM Emploees")
+    Data = [list(tup) for tup in cur.fetchall()]
+    con.close()
+    return render_template('Show Employees.html' , Data = Data, title = "Show Employees Page")
 
 @app.route('/LogIn') 
 def LogIn():
