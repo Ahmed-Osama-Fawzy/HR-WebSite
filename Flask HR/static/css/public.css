@@ -59,3 +59,78 @@ input:focus:not([type="sumbit"]) {
 	color: var(--main-color);
 	background-color: var(--white-color);
 }
+
+
+:root{
+    --Word : ltr;
+    --Direction : left;
+}
+.Container {
+    direction: var(--Word);
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+}
+
+.Container .Father{
+    float: var(--Direction);
+    width: 90%;
+    padding: 2.5%;
+    margin: 2.5%;
+}
+
+@media screen and (min-width:1201px) {
+    .Container .Father .Son{
+        float: var(--Direction);
+        width: 16%;
+        padding: 1%;
+        margin: 1%;
+        background-color: black;
+        color: aliceblue;
+    }
+}
+
+@media screen and (min-width:1024px) and (max-width:1200px) {
+    .Container .Father .Son{
+        float: var(--Direction);
+        width: 21%;
+        padding: 1%;
+        margin: 1%;
+        background-color: black;
+        color: aliceblue;
+    }
+}
+
+@media screen and (min-width:767px) and (max-width:1024px) {
+    .Container .Father .Son{
+        float: var(--Direction);
+        width: 27.333333333%;
+        padding: 1.5%;
+        margin: 1.5%;
+        background-color: black;
+        color: aliceblue;
+    }
+}
+
+@media screen and (min-width:481px) and (max-width:767px) {
+    .Container .Father .Son{
+        float: var(--Direction);
+        width: 42%;
+        padding: 2%;
+        margin: 2%;
+        background-color: black;
+        color: aliceblue;
+    }
+}
+
+@media screen and (max-width:480px) {
+    .Container .Father .Son{
+        float: var(--Direction);
+        width: 90%;
+        padding: 2.5%;
+        margin: 2.5%;
+        background-color: black;
+        color: aliceblue;
+    }
+}
