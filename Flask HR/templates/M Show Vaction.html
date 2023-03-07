@@ -10,21 +10,26 @@
                 <tr>
                     <th> Id </th>
                     <th> Name </th>
-                    <th> DepartMent </th>
-                    <th> Start Day </th>
+                    <th> Start Date  </th>
                     <th> End Date </th>
                     <th> Reason </th>
-                    <th> Requeting </th>
+                    <th> Appovement </th>
                 </tr>
             </thead>
             <tbody>
-                <td>
-                  <th></th>
-                  <th>
-                    <button> Reject </button>
-                    <button> Appove </button>
-                  </th>
-                </td>
+                {% for Row in Data%}
+                    <td>
+                        {% for Value in Row %}
+                            <th> {{ Value }} </th>
+                        {% endfor %}
+                        <th>
+                            <button value=""> Reject </button>
+                        </th>
+                        <th>
+                            <button value=""> Appove </button>
+                        </th>
+                    </td>   
+                {% endfor %}
             </tbody>
             <tfoot></tfoot>
         </table>

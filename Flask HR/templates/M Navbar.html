@@ -1,23 +1,25 @@
 {% extends 'Header.html' %}
 {% block CssFiles %}
-<link rel="stylesheet" href="{{ urlfor('static' , filename='') }}">
+<link rel="stylesheet" href="{{ url_for('static' , filename='') }}">
 {% endblock %}
 {% block Body%}
 <nav>
   <div class="navbar">
-    <div class="logo">
-      <img src="{{ url_for('static' , filename='images/hr-logo-zip-file (1)/png/logo-no-background.png') }}">
-    </div>
-    <ul class="links">
-      <li><a href="#">Home</a></li>
-      <li><a href="#">List/Search Employee</a></li>
-      <li><a href="#">List/Search HR</a></li>
-      <li><a href="#">Modify HR</a></li>
-      <li><a href="#">Delete HR</a></li>
-      <li><a href="#">Vacations Request Action</a></li>
-      <li><a href="#">Sign Out</a></li>
+    <ul>
+        <li>
+            <div class="logo">
+                <img src="{{ url_for('static' , filename='images/hr-logo-zip-file (1)/png/logo-no-background.png') }}">
+            </div>
+        </li>
+        <li> <a href="{{ url_for('MHome') }}l"> Home </a> </li>
+        <li> <a href="{{ url_for('InsertHR') }}"> Add Emploee </a> </li>
+        <li> <a href="{{ url_for('ModifyHR') }}"> Modify Emploee </a> </li>
+        <li> <a href="{{ url_for('RemoveHR') }}"> Remove Emploee </a>  </li>
+        <li> <a href="{{ url_for('MShowVactions') }}"> Show Vactions  </a>  </li>
+        <li> <a href="{{ url_for('ShowHRS') }}"> Show HRS  </a> </li>
+        <li> <a href="{{ url_for('ShowEmplyooes') }}"> Show Emplyooes  </a> </li>
     </ul>
-  </div>
+</div>
 </nav>
 {% block Main %}
 {% endblock %}

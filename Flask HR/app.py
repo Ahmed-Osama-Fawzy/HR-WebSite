@@ -30,6 +30,23 @@ app = Flask(__name__)
 def Home():
     return render_template('Home.html', title = "Home Page")
 
+@app.route('/HRHome') 
+def HRHome():
+    return render_template('H Home.html', title = "HR Home Page")
+
+@app.route('/MHome') 
+def MHome():
+    return render_template('M Home.html', title = "M Home Page")
+
+@app.route('/ShowHRS') 
+def ShowHRS():
+    return render_template('Show HRS.html', title = "Show HRS Page")
+
+@app.route('/ShowEmplyooes') 
+def ShowEmplyooes():
+    return render_template('Show Employees.html', title = "Show Employees Page")
+
+
 @app.route('/LogIn') 
 def LogIn():
     return render_template('Log in.html', title = "Log In Page")
@@ -83,7 +100,6 @@ def RemoveEmployee():
         finally:
             con.close()
     return render_template('Remove Employee.html', title = "Remove Employee Page")
-
 
 @app.route('/ModifyEmployee' , methods=['GET', 'POST']) 
 def ModifyEmployee():
@@ -143,8 +159,8 @@ def SubmitVaction():
             con.close()
     return render_template('Submit Vaction.html', title = "Submit Vaction Page")
 
-@app.route('/ShowVactions') 
-def ShowVactions():
+@app.route('/HShowVactions') 
+def HShowVactions():
     con = sqlite3.connect(f"{os.path.dirname(os.path.abspath(__file__))}\System.db")
     cur = con.cursor()
     cur.execute("SELECT * FROM Vactions")
@@ -154,7 +170,104 @@ def ShowVactions():
 
 @app.route('/HRProfile') 
 def HRProfile():
-    return render_template('HR Profile.html', title = "Add Employee Page")
+    return render_template('HR Profile.html', title = "HR Profile Page")
+
+@app.route('/ForgetPassword') 
+def ForgetPassword():
+    return render_template('Forget Password.html', title = "Forget Password Page")
+
+@app.route('/InsertHR' , methods=['GET', 'POST']) 
+def InsertHR():
+    if request.method == "POST":
+        try:
+            UserName = request.form.get("UserName")
+            Address = request.form.get("Address")
+            Mobile = request.form.get("Mobile")
+            Email = request.form.get("Email")
+            Salary = request.form.get("Salary")
+            BirthDay = request.form.get("BirthDay")
+            MSatuts = request.form.get("MSatuts")
+            Gender = request.form.get("Gender")
+            with sqlite3.connect(f"{os.path.dirname(os.path.abspath(__file__))}\System.db") as con:
+                cur = con.cursor()
+                cur.execute("SELECT Id FROM HRs")
+                Id = len(cur.fetchall())
+                cur.execute(f"INSERT INTO HRs VALUES('{UserName}' , {Id} , '{Address}' , {Mobile} , '{Email}' , '{Gender}' , '{MSatuts}' , {Salary} , '{BirthDay}' , 0 , 6)")
+                con.commit()
+        except sqlite3.Error as er:
+            print( f"Sorry Have Error Is: {er}")
+        finally:
+            con.close()
+    con = sqlite3.connect(f"{os.path.dirname(os.path.abspath(__file__))}\System.db")
+    cur = con.cursor()
+    cur.execute("SELECT Id FROM HRs")
+    Id = len(cur.fetchall())
+    con.close()
+    return render_template('Add HR.html', title = "Add HR Page" ,  Id = f"{Id}" )
+
+@app.route('/RemoveHR' , methods=['GET', 'POST']) 
+def RemoveHR():
+    if request.method == "POST":
+        try:
+            Id = request.form.get("Id")
+            with sqlite3.connect(f"{os.path.dirname(os.path.abspath(__file__))}\System.db") as con:
+                cur = con.cursor()
+                cur.execute(f"DELETE FROM HRs WHERE Id = {Id}")
+                cur.execute(f"UPADTE HRs SET Id = Id-1 WHERE Id > {Id}")
+                con.commit()
+        except sqlite3.Error as er:
+            print( f"Sorry Have Error Is: {er}")
+        finally:
+            con.close()
+    return render_template('Remove HR.html', title = "Remove HR Page")
+
+@app.route('/ModifyHR' , methods=['GET', 'POST']) 
+def ModifyHR():
+    if request.method == "POST":
+        try:
+            UserName = request.form.get("UserName")
+            Address = request.form.get("Address")
+            Mobile = request.form.get("Mobile")
+            Email = request.form.get("Email")
+            Salary = request.form.get("Salary")
+            BirthDay = request.form.get("BirthDay")
+            MSatuts = request.form.get("MSatuts")
+            Gender = request.form.get("Gender")
+            Id = request.form.get("Id")
+            with sqlite3.connect(f"{os.path.dirname(os.path.abspath(__file__))}\System.db") as con:
+                cur = con.cursor()
+                if UserName:
+                    cur.execute(f"UPDATE HRs SET Name ='{UserName}' WHERE Id = {Id}")
+                if Address:
+                    cur.execute(f"UPDATE HRs SET Address ='{Address}' WHERE Id = {Id}")
+                if Mobile:
+                    cur.execute(f"UPDATE HRs SET Mobile ={Mobile} WHERE Id = {Id}")
+                if Email:
+                    cur.execute(f"UPDATE HRs SET Email ='{Email}' WHERE Id = {Id}")
+                if BirthDay:
+                    cur.execute(f"UPDATE HRs SET BirthDay ='{BirthDay}' WHERE Id = {Id}")
+                if MSatuts:
+                    cur.execute(f"UPDATE HRs SET MStatuts ='{MSatuts}' WHERE Id = {Id}")
+                if Gender:
+                    cur.execute(f"UPDATE HRsHRs SET Gender ='{Gender}' WHERE Id = {Id}")
+                if Salary:
+                    cur.execute(f"UPDATE HRs SET Salary ={Salary} WHERE Id = {Id}")
+                con.commit()
+        except sqlite3.Error as er:
+            print( f"Sorry Have Error Is: {er}")
+        finally:
+            con.close()
+    return render_template('Modify HR.html', title = "Modify HR Page")
+
+@app.route('/MShowVactions') 
+def MShowVactions():
+    con = sqlite3.connect(f"{os.path.dirname(os.path.abspath(__file__))}\System.db")
+    cur = con.cursor()
+    cur.execute("SELECT * FROM Vactions")
+    Data = [list(tup) for tup in cur.fetchall()]
+    con.close()
+    return render_template('M Show Vaction.html', Data = Data , title = "M Show Vactions")
+
 ###################################################################################################################################################
 # Running Setion #
 ###################################################################################################################################################
