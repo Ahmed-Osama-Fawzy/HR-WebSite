@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static' , filename='css/public.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/Public.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static' , filename='css/Navbar.css') }}">
     {% block CssFiles%}
-    
+
     {% endblock %}
     <title>{{ title }}</title>
 </head>
 <body>
     {% block HRNav %}
     <nav>
-        <div class="navbar">
-            <ul>
+        <div>
+            <ul class="links">
                 <li>
                     <div class="logo">
                         <img src="{{ url_for('static' , filename='images/hr-logo-zip-file (1)/png/logo-no-background.png') }}">
                     </div>
                 </li>
-                <li> <a href="{{ url_for('HRHome') }}l"> Home </a> </li>
+                <li> <a href="{{ url_for('HRHome') }}"> Home </a> </li>
                 <li> <a href="{{ url_for('InsertEmployee') }}"> Add Emploee </a> </li>
                 <li> <a href="{{ url_for('ModifyEmployee') }}"> Modify Emploee </a> </li>
                 <li> <a href="{{ url_for('RemoveEmployee') }}"> Remove Emploee </a>  </li>
@@ -32,14 +33,14 @@
     {% endblock %}
     {% block MNav %}
     <nav>
-        <div class="navbar">
-          <ul>
+        <div>
+          <ul class="links">
               <li>
                   <div class="logo">
                       <img src="{{ url_for('static' , filename='images/hr-logo-zip-file (1)/png/logo-no-background.png') }}">
                   </div>
               </li>
-              <li> <a href="{{ url_for('MHome') }}l"> Home </a> </li>
+              <li> <a href="{{ url_for('MHome') }}"> Home </a> </li>
               <li> <a href="{{ url_for('InsertHR') }}"> Add HR </a> </li>
               <li> <a href="{{ url_for('ModifyHR') }}"> Modify HR </a> </li>
               <li> <a href="{{ url_for('RemoveHR') }}"> Remove HR </a>  </li>
